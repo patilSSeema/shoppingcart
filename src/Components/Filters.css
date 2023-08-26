@@ -1,0 +1,16 @@
+.filter-product{
+    padding: 20px;
+    display: flex;
+    color: white;
+    background-color: darkslateblue;
+    flex-direction: column;
+    margin: 10px;
+    height: 86vh;
+    width: 20%;
+}
+.filter-product >span{
+    padding-bottom: 20px;
+}
+.title{
+    font-size: 30px;
+}
