@@ -8,11 +8,7 @@ const filterReducer = (state, action) => {
 
     case "FILTER_BY_SEARCH":
       return { ...state, searchQuery: action.payload };
-    case "CLEAR_FILTER":
-      return {
-        byRating: 0,
-        searchQuery: "",
-      };
+  
     case "SET_CATEGORY":
       return { ...state, selectedCategory: action.payload };
     case "CLEAR_FILTER":

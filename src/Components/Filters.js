@@ -17,23 +17,25 @@ const Filters = () => {
   };
   return (
     <div className="filter-product">
-      <span className="title">Filter products</span>
-      <div className="category-filter">
-        <h4>Filter by Category</h4>
+      {/* <div className="category-filter">
+        <h4> Filter By Category</h4>
         <button onClick={() => handleCategoryChange("")}>All</button>
+        <button onClick={() => handleCategoryChange("men's clothing")}>
+          Men
+        </button>
+        <button onClick={() => handleCategoryChange("women's clothing")}>
+          Women
+        </button>
         <button onClick={() => handleCategoryChange("electronics")}>
           Electronics
         </button>
-        <button onClick={() => handleCategoryChange("men's clothing")}>
-          Men's clothing
-        </button>
-        <button onClick={() => handleCategoryChange("women's clothing")}>
-          Women's clothing
-        </button>
+
         <button onClick={() => handleCategoryChange("jewelery")}>
           Jewelery
         </button>
-      </div>
+      </div> */}
+      
+
       <span>
         <Form.Check
           inline
@@ -41,6 +43,7 @@ const Filters = () => {
           name="group1"
           type="radio"
           id={`inline-1`}
+          className="custom-radio"
           onChange={() =>
             filterDispatch({
               type: "SORT_BY_PRICE",
@@ -55,6 +58,7 @@ const Filters = () => {
           name="group1"
           type="radio"
           id={`inline-2`}
+          className="custom-radio"
           onChange={() =>
             filterDispatch({
               type: "SORT_BY_PRICE",
@@ -63,6 +67,7 @@ const Filters = () => {
           }
           checked={sort === "highToLow" ? true : false}
         />
+       
       </span>
 
       <label style={{ paddingRight: 10 }}>Rating:</label>
@@ -79,7 +84,8 @@ const Filters = () => {
         />
       </span>
 
-      <Button
+      {/* <Button
+        className="clear-filter"
         variant="light"
         onClick={() =>
           filterDispatch({
@@ -88,7 +94,7 @@ const Filters = () => {
         }
       >
         Clear All Filters
-      </Button>
+      </Button> */}
     </div>
   );
 };

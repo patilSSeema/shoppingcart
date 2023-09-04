@@ -1,16 +1,14 @@
-.filter-product{
-    padding: 20px;
-    display: flex;
-    color: white;
-    background-color: darkslateblue;
-    flex-direction: column;
-    margin: 10px;
-    height: 86vh;
-    width: 20%;
+.filter-product {
+  display: flex;
+
+  justify-content: center;
+  background-color: antiquewhite;
+  padding: 10px;
 }
-.filter-product >span{
-    padding-bottom: 20px;
+.custom-radio .form-check-input[type="radio"] {
+  width: 10px;
+  height: 10px;
 }
-.title{
-    font-size: 30px;
+.custom-radio input[type="radio"] {
+  transform: scale(1.5); /* Adjust the scale as needed */
 }

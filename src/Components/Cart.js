@@ -4,11 +4,14 @@ import { AiOutlineShoppingCart, AiFillDelete } from "react-icons/ai";
 import CartContext from "../Context/Card/CartContext";
 import { Button, Col, Form, Image, Row } from "react-bootstrap";
 import Rating from "./Rating";
+import "./Cart.css";
+import { Link } from "react-router-dom";
 const Cart = () => {
+  const GlobalState = useContext(CartContext);
   const { showHideCart, removeItem, cartItems, changeCartQty } =
     useContext(CartContext);
   const [total, setTotal] = useState();
-
+  
   useEffect(() => {
     const calculatedTotal = cartItems.reduce((acc, curr) => {
       console.log("Item price:", curr.price);
@@ -19,6 +22,11 @@ const Cart = () => {
     setTotal(calculatedTotal.toFixed(2));
   }, [cartItems, changeCartQty]);
   console.log(total);
+  const handleData = () => {
+    GlobalState.SetPrice(total);
+    // cartItems.forEach((item) => removeItem(item.id));
+  };
+
   return (
     <div className="home">
       <div className="productContainer">
@@ -43,7 +51,7 @@ const Cart = () => {
                 <Col md={2}>
                   <Form.Control
                     as="select"
-                    value={prod.qty}
+                    // value={prod.qty}
                     onChange={(e) => changeCartQty(prod.id, e.target.value)}
                   >
                     {[...Array(5).keys()].map((x) => (
@@ -67,10 +75,18 @@ const Cart = () => {
       </div>
       <div className="filters summary">
         <span className="title">Subtotal ({cartItems.length}) items</span>
+        <p>Discount :0.00</p>
+        <p>Delivery Charges : free Delivery</p>
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: $ {total}</span>
-        <Button type="button" disabled={cartItems.length === 0}>
-          Proceed to Checkout
-        </Button>
+        <Link to={cartItems.length > 0 ? "/checkoutCart" : "#"}>
+          <Button
+            type="button"
+            disabled={cartItems.length === 0}
+            onClick={handleData}
+          >
+            Proceed to Buy ({cartItems.length}) items
+          </Button>
+        </Link>
       </div>
     </div>
   );

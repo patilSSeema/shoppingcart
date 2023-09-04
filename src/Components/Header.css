@@ -4,6 +4,13 @@
   font-size: 30px;
   margin: 10px 0;
 }
+.nav-bar {
+  background-color: #145e68;
+}
+.nav-toggle {
+  color: white;
+  background-color: white;
+}
 
 .cartitem {
   display: flex;
@@ -25,4 +32,53 @@
   flex: 1;
   padding: 0 20px;
   flex-direction: column;
+}
+.nav-items p {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  padding: 3px;
+}
+.link {
+  text-decoration: none;
+}
+.d-flex input {
+  height: 40px;
+  width: 200px;
+}
+.d-flex Button {
+  height: 40px;
+}
+.link p:hover {
+  background-color: White;
+  color: black;
+  box-shadow: 0 0 10px aqua;
+  border-radius: 10px;
+}
+.signoutbtn {
+  border: none;
+  outline: none;
+  background: none;
+}
+@media screen and (max-width: 499px) {
+  nav-items p {
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .d-flex input {
+    height: 40px;
+    width: 160px;
+  }
+  .d-flex Button {
+    height: 4 0px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+}
+@media screen and (min-width: 500px) and (max-width: 768px) {
 }

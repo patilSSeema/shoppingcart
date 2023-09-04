@@ -1,0 +1,98 @@
+/* css for checkoutcart */
+.main-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.summary-details {
+  padding: 10px;
+  margin-top: 10px;
+  border-bottom: 3px solid black;
+}
+.checkout-img img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+.checkout-img span {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+  max-width: 100px;
+}
+.payment-div {
+  margin: 10px;
+}
+.payment-div div {
+  color: green;
+  font-weight: 600;
+}
+.payment-div h5 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.payment-div button {
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  border-radius: 5px;
+  color: white;
+}
+.payment-div p {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* css for submitcheckout */
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.submitsCSS {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+}
+.linkC {
+  text-decoration: none;
+  font-size: 18px;
+  color: #007bff;
+}
+/* sucesspage */
+.success-style{
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 300px;
+}
+.success-style span{
+  color: green;
+  font-weight: 700;
+  font-size: larger;
+}
+.success-style p{
+  margin-top: 10px;
+}

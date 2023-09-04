@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import CartContext from "../Card/CartContext";
 
 import {
@@ -16,6 +16,10 @@ const CartState = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
+  const [productName, setProductName] = useState("Movie");
+  const [price, setPrice] = useState(0);
+  const [image, setImage] = useState(); 
+   const [orderProduct, setOrderProduct] = useState([]);
 
   const addToCart = (item, qty) => {
     dispatch({
@@ -33,6 +37,18 @@ const CartState = ({ children }) => {
   const removeItem = (id) => {
     dispatch({ type: REMOVE_ITEM, payload: id });
   };
+  function SetProductName(title) {
+    setProductName(title);
+  }
+  function SetPrice(TicketPrice) {
+    setPrice(TicketPrice);
+  }
+  function SetImage(image) {
+    setImage(image);
+  }
+  function SetOrderProduct() {
+    setOrderProduct();
+  }
   const changeCartQty = (id, qty) => {
     dispatch({
       type: CHANGE_CART_QTY,
@@ -43,11 +59,11 @@ const CartState = ({ children }) => {
     });
   };
 
-  const calculateTotal = () => {
-    return state.cartItems.reduce((total, item) => {
-      return total + item.price * item.qty;
-    }, 0);
-  };
+  // const calculateTotal = () => {
+  //   return state.cartItems.reduce((total, item) => {
+  //     return total + item.price * item.qty;
+  //   }, 0);
+  // };
 
   const [filterState, filterDispatch] = useReducer(filterReducer, {
     byRating: 0,
@@ -64,9 +80,15 @@ const CartState = ({ children }) => {
         showHideCart,
         removeItem,
         changeCartQty,
-        calculateTotal,
         filterState,
         filterDispatch,
+        SetProductName,
+        productName,
+        SetPrice,
+        price,
+        SetImage,
+        image,
+        SetOrderProduct
       }}
     >
       {children}
